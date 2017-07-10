@@ -1,0 +1,12 @@
+version: "2"
+services:
+  graphdb:
+      image: neo4j:latest
+      environment:
+      - NEO4J_AUTH=neo4j/password
+      volumes:
+      - ./volumes/db/dbms:/data/dbms
+      ports:
+      - "7474:7474"
+      - "7687:7687"
+      restart: always
